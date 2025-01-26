@@ -1,0 +1,29 @@
+<%= form_with(model: statement, local: true) do |form| %>
+  <% if statement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(statement.errors.count, "error") %> prohibited this statement from being saved:</h2>
+
+      <ul>
+      <% statement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.fields_for :attachment do |attachment_fields| %>
+      <%= attachment_fields.file_field :file %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= category_select(form, @categories) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

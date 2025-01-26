@@ -1,0 +1,36 @@
+{
+  "application.js": "/packs/js/application.js",
+  "entrypoints": {
+    "application": {
+      "assets": {
+        "js": [
+          "/packs/js/runtime.js",
+          "/packs/js/vendors-node_modules_mui_icons-material_AccountCircle_js-node_modules_mui_icons-material_Cate-0395b1.js",
+          "/packs/js/app_javascript_components_sync_recursive_.js",
+          "/packs/js/application.js"
+        ]
+      }
+    },
+    "server_rendering": {
+      "assets": {
+        "js": [
+          "/packs/js/runtime.js",
+          "/packs/js/vendors-node_modules_mui_icons-material_AccountCircle_js-node_modules_mui_icons-material_Cate-0395b1.js",
+          "/packs/js/app_javascript_components_sync_recursive_.js",
+          "/packs/js/server_rendering.js"
+        ]
+      }
+    }
+  },
+  "js/app_javascript_components_sync_recursive_.js": "/packs/js/app_javascript_components_sync_recursive_.js",
+  "js/app_javascript_components_sync_recursive_.js.map": "/packs/js/app_javascript_components_sync_recursive_.js.map",
+  "js/application.js.map": "/packs/js/application.js.map",
+  "js/runtime.js.map": "/packs/js/runtime.js.map",
+  "js/server_rendering.js.map": "/packs/js/server_rendering.js.map",
+  "js/vendors-node_modules_mui_icons-material_AccountCircle_js-node_modules_mui_icons-material_Cate-0395b1.js": "/packs/js/vendors-node_modules_mui_icons-material_AccountCircle_js-node_modules_mui_icons-material_Cate-0395b1.js",
+  "js/vendors-node_modules_mui_icons-material_AccountCircle_js-node_modules_mui_icons-material_Cate-0395b1.js.map": "/packs/js/vendors-node_modules_mui_icons-material_AccountCircle_js-node_modules_mui_icons-material_Cate-0395b1.js.map",
+  "runtime.js": "/packs/js/runtime.js",
+  "server_rendering.js": "/packs/js/server_rendering.js",
+  "static/assets/images/logo.svg": "/packs/static/assets/images/logo-0804ac131ef700f2a0cf.svg",
+  "static/assets/logo.svg": "/packs/static/assets/logo-0804ac131ef700f2a0cf.svg"
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EspressoRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag    'application' %>
+  </head>
+
+  <body>
+    <%= react_component("Topbar") %>
+    <%= react_component("Main") %>
+    <%= react_component("Sidebar") %>
+    <% if user_signed_in? %>
+      <h3><%= current_user.email %></h3>
+      <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-white bg-blue-400" %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

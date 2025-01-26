@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  performed_at: 2024-08-16 13:33:16
+  cost: 1
+  merchant: MyString
+  transaction_id: 1
+  category: one
+
+two:
+  performed_at: 2024-08-16 13:33:16
+  cost: 1
+  merchant: MyString
+  transaction_id: 1
+  category: two

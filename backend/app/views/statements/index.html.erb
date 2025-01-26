@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Despesas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estabelecimento</th>
+      <th>Valor</th>
+      <th>Data de criação</th>
+      <th>Cartão</th>
+      <th>Comprovação</th>
+      <% if current_user.role == 'admin' %>
+        <th>Funcionário</th>
+      <% end %>
+      <th>Categoria</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statements.each do |statement| %>
+      <tr>
+        <td>
+          <%= display_image(statement) %>
+          <%= statement.merchant %>
+        </td>
+        <td><%= formatted_cost(statement.cost) %></td>
+        <td><%= formatted_date(statement.performed_at)  %></td>
+        <td><%= display_card(statement) %></td>
+        <td><%= proof_status(statement) %></td>
+        <% if current_user.admin? %>
+          <td><%= display_employee_name(statement) %></td>
+        <% end %>
+        <td><%= display_category(statement) %></td>
+        <td><%= display_edit_link(statement) %></td>
+        <td><%= display_archive_link(statement) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if current_user.role == 'admin' %>
+  <h1>Despesas arquivadas</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Estabelecimento</th>
+        <th>Valor</th>
+        <th>Data de criação</th>
+        <th>Cartão</th>
+        <th>Comprovação</th>
+        <% if current_user.role == 'admin' %>
+          <th>Funcionário</th>
+        <% end %>
+        <th>Categoria</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @archived_statements.each do |archived_statement| %>
+        <tr>
+          <td>
+            <%= display_image(archived_statement) %>
+            <%= archived_statement.merchant %>
+          </td>
+          <td><%= formatted_cost(archived_statement.cost) %></td>
+          <td><%= formatted_date(archived_statement.performed_at) %></td>
+          <td><%= display_card(archived_statement) %></td>
+          <td><%= proof_status(archived_statement) %></td>
+          <td><%= display_employee_name(archived_statement) if current_user.admin? %></td>
+          <td><%= display_category(archived_statement) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
